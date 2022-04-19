@@ -6,6 +6,8 @@ name = "pypi"
 [packages]
 searchtweets = "*"
 streamlit = "*"
+tweepy = "*"
+python-dotenv = "*"
 
 [dev-packages]
 
