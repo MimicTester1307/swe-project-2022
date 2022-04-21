@@ -8,6 +8,7 @@ searchtweets = "*"
 streamlit = "*"
 tweepy = "*"
 python-dotenv = "*"
+requests = "*"
 
 [dev-packages]
 
