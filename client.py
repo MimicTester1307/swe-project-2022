@@ -24,4 +24,17 @@ class Client:
             wait_on_rate_limit=True
         )    # creating the client that will be used for the access and requests
 
+    def retrieve_search_keyword_data(self, keyword: str):
+        """
+        retrieves search data about this keyword from the Twitter API
+        The 'Essential' access level allows only for retrieving search data from the past week
+        :param keyword: the query to search for
+        :return:
+        """
+        __new_client = Client()
+        __new_client
+
+    def display_data(self):
+        pass
+
 
