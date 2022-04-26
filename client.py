@@ -1,8 +1,6 @@
 import os
 from dotenv import load_dotenv
 import tweepy
-import json
-import streamlit as st
 
 
 # loading environment variables
@@ -31,29 +29,10 @@ class Client:
             wait_on_rate_limit=True
         )    # creating the client that will be used for the access and requests
 
-    def retrieve_search_keyword_data(self, query: str):
+    def get_client(self):
         """
-        retrieves search data about this keyword from the Twitter API
-        The 'Essential' access level allows only for retrieving search data from the past week
-        :param query: the query to search for
-        :return: Response data
+        Returns the initialized Twitter client
+        :return: client
         """
-        # response = self.__client.search_recent_tweets(
-        #     query=keyword,
-        #     max_results=10,
-        #     expansions=["geo.place_id"],
-        #     tweet_fields=["context_annotations",    # entity recognition/extraction, topical analysis
-        #                   "created_at",    # to understand when Tweet was created and used for time-series analysis
-        #                   "public_metrics"    # to measure tweet engagement
-        #                   ],
-        #     place_fields=["country"]
-        # )
-
-        response = self.__client.get_recent_tweets_count(query=query, granularity="hour")
-
-        return response.data
-
-    def display_data(self):
-        pass
-
+        return self.__client
 
