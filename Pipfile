@@ -9,6 +9,7 @@ streamlit = "*"
 tweepy = "*"
 python-dotenv = "*"
 requests = "*"
+pandas = "*"
 
 [dev-packages]
 

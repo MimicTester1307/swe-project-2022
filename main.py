@@ -1,8 +1,7 @@
-import streamlit as sl
-from client import Client
+from user import User
 
-test_client = Client()
-response = test_client.retrieve_search_keyword_data("nft")
+
+response = test_client.retrieve_search_keyword_data("nft #nft")
 print(response)
 
 
