@@ -2,10 +2,6 @@ from client import Client
 import json
 import pandas as pd
 
-# Initializing Client
-__client = Client()
-CLIENT = __client.get_client()
-
 
 # This method will be static to minimize function calls
 # and stay within the rate limit
@@ -26,15 +22,18 @@ def retrieve_search_keyword_data(query: str):
     #                   ],
     #     place_fields=["country"]
     # )
-    client = CLIENT.get_client()
-    response = client.get_recent_tweets_count(query=query, granularity="hour")
+    # Initializing Client
+    test_client = Client().get_client()
+
+    response = test_client.get_recent_tweets_count(query=query, granularity="day")
 
     return response.data
 
 
 # Retrieved data
 DATA = retrieve_search_keyword_data("nft #nft")
-
+# TODO: this throws an error, check pandas
+#  documentation in project Notion page on how to change orient parameter
 test_dict = json.loads(DATA)
 test_df = pd.json_normalize(test_dict)
 print(test_df)
