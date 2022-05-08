@@ -1,6 +1,4 @@
 from client import Client
-import json
-import pandas as pd
 
 # Initializing Client
 test_client = Client().get_client()
@@ -35,7 +33,7 @@ def retrieve_tweet_count_data(query: str):
 # and comments to measure engagement
 def populate_count_array(query: str):
     count_array = []
-    count_data = retrieve_tweet_count_data("bored ape")
+    count_data = retrieve_tweet_count_data(query)
     for data in count_data:
         count_array.append(data["tweet_count"])
 
