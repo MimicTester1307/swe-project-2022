@@ -5,9 +5,11 @@ name = "pypi"
 
 [packages]
 searchtweets = "*"
-streamlit = "*"
 tweepy = "*"
 python-dotenv = "*"
+requests = "*"
+firebase-admin = "*"
+google-cloud-firestore = "*"
 
 [dev-packages]
 
