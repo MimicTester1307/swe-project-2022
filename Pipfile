@@ -1,0 +1,17 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+searchtweets = "*"
+tweepy = "*"
+python-dotenv = "*"
+requests = "*"
+firebase-admin = "*"
+google-cloud-firestore = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.8"
