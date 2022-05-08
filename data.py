@@ -32,18 +32,14 @@ def retrieve_tweet_count_data(query: str):
 # This method will retrieve the tweet likes
 # and comments to measure engagement
 def populate_count_array(query: str):
+    """
+    calls the function to search for tweet data then extract the tweet count
+    :param query: keyword to search for. will be passed to retrieve_tweet_count_data()
+    :return: count_array an array of tweet counts
+    """
     count_array = []
     count_data = retrieve_tweet_count_data(query)
     for data in count_data:
         count_array.append(data["tweet_count"])
 
     return count_array
-
-
-# TODO: this throws an error, check pandas
-#  documentation in project Notion page on how to change orient parameter
-# test_dict = json.loads(DATA)
-# test_df = pd.json_normalize(test_dict)
-# print(test_df)
-
-# TODO: Add function to retrieve number of likes for tweets and maybe number of comments; to measure engagement
