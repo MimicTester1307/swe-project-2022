@@ -1,7 +1,0 @@
-streamlit
-pandas
-plotly
-sqlite3
-requests
-tweepy
-numpy
