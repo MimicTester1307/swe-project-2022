@@ -2,10 +2,13 @@ from client import Client
 import json
 import pandas as pd
 
+# Initializing Client
+test_client = Client().get_client()
 
-# This method will be static to minimize function calls
-# and stay within the rate limit
-def retrieve_search_keyword_data(query: str):
+
+# This method will retrieve the tweet counts
+# for the searched keyword
+def retrieve_tweet_count_data(query: str):
     """
     retrieves search data about this keyword from the Twitter API
     The 'Essential' access level allows only for retrieving search data from the past week
@@ -22,18 +25,27 @@ def retrieve_search_keyword_data(query: str):
     #                   ],
     #     place_fields=["country"]
     # )
-    # Initializing Client
-    test_client = Client().get_client()
 
     response = test_client.get_recent_tweets_count(query=query, granularity="day")
 
     return response.data
 
 
-# Retrieved data
-DATA = retrieve_search_keyword_data("nft #nft")
+# This method will retrieve the tweet likes
+# and comments to measure engagement
+def populate_count_array(query: str):
+    count_array = []
+    count_data = retrieve_tweet_count_data("bored ape")
+    for data in count_data:
+        count_array.append(data["tweet_count"])
+
+    return count_array
+
+
 # TODO: this throws an error, check pandas
 #  documentation in project Notion page on how to change orient parameter
-test_dict = json.loads(DATA)
-test_df = pd.json_normalize(test_dict)
-print(test_df)
+# test_dict = json.loads(DATA)
+# test_df = pd.json_normalize(test_dict)
+# print(test_df)
+
+# TODO: Add function to retrieve number of likes for tweets and maybe number of comments; to measure engagement
