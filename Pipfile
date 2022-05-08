@@ -10,6 +10,7 @@ tweepy = "*"
 python-dotenv = "*"
 requests = "*"
 pandas = "*"
+firebase-admin = "*"
 
 [dev-packages]
 
