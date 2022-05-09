@@ -1,4 +1,4 @@
-from client import Client
+from twitter_api_interactions.client import Client
 
 # Initializing Client
 test_client = Client().get_client()

@@ -1,7 +1,7 @@
 import firebase_admin
 import google.cloud
 from firebase_admin import credentials, firestore
-from data import populate_count_array
+from twitter_api_interactions.data import populate_count_array
 
 
 # DOCUMENT IDs
