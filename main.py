@@ -11,7 +11,7 @@ DOCUMENT_IDS = ["MVFEnZf4hzWZOcgf1qWh", "PgAcH7Y6rKkxWeQRLiUr", "RlJLxrEi1zzAsRI
                 ]
 
 # FIRESTORE CREDENTIALS
-cred = credentials.Certificate("nft-project-ac35e-firebase-adminsdk-ujo8c-b728fbcc08.json")
+cred = credentials.Certificate("firebase_auth/nft-project-ac35e-firebase-adminsdk-ujo8c-b728fbcc08.json")
 app = firebase_admin.initialize_app(cred)
 
 # Initializing the client and retrieving
