@@ -35,4 +35,3 @@ class Client:
         :return: client
         """
         return self.__client
-
