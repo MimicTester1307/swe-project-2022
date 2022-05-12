@@ -1,0 +1,6 @@
+[tool.pytest.ini_options]
+minversion = "7.1"
+xfail_strict = "true"
+filterwarnings = ["error"]
+log_cli_level = "info"
+testpaths = ["tests"]
